@@ -1,0 +1,49 @@
+<html>
+<head>
+    <style>
+.container1{
+    background-color: #b3e6ff; 
+    padding: 10px;
+
+}
+</style>
+    <script type='text/javascript'>
+        var i=0;
+        function addFields(){
+            console.log(i);
+            
+            var container = document.getElementById("container");
+            for(j=0;j<2;j++){
+                if(j==0)
+                    container.appendChild(document.createTextNode("a " +i));
+                else if(j==1)
+                container.appendChild(document.createTextNode("b " +i));
+                var input = document.createElement("input");
+                input.type = "text";
+                i+=1;
+                if(j==0)
+                    input.name = "a" +i;
+                else if(j==1)
+                     input.name = "b" +i;
+                container.appendChild(input);
+            }
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+        }
+    </script>
+</head>
+<body>
+    <a href="#" id="filldetails" onclick="addFields()">Add Field</a>
+<div class="container container1">
+    <div class="row">
+        <div class="col-md">
+            <p>A</p>
+        </div>
+        <div class="col-md">
+            <p>B</p>
+        </div>
+    </div>
+    <div id="container"/>
+</div>
+</body>
+</html>
